@@ -9,7 +9,7 @@ if __name__ == '__main__':
     old_model = None
     MODEL_FILE = sys.argv[4]
     submit_job = (sys.argv[5] == 'yes')
-
+    cache_path = '/content/drive/MyDrive/PrefixTuningTests/gpt2'
 
     if mode =='data2text':
 
@@ -282,10 +282,10 @@ if __name__ == '__main__':
 
 
     if MODEL_FILE == 'gpt2-large':
-        COMMANDLINE += ' --cache_dir /u/scr/xlisali/contrast_LM/transformers/examples/control/gpt2-large-s3 '
+        COMMANDLINE += ' --cache_dir {}'.format(os.path.join(cache_path, 'gpt2-large-s3'))
 
     if MODEL_FILE == 'gpt2-medium':
-        COMMANDLINE += ' --cache_dir /u/scr/xlisali/contrast_LM/transformers/examples/control/gpt2-medium-s3 '
+        COMMANDLINE += ' --cache_dir {}'.format(os.path.join(cache_path, 'gpt2-medium-s3'))
 
 
     print(COMMANDLINE)

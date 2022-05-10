@@ -178,8 +178,8 @@ if __name__ == '__main__':
 
 
     elif args.mode == 'triples':
-        TRAIN_FILE = "/u/scr/xlisali/DART/dart/data/v1.1.1/dart-v1.1.1-full-train.json"
-        TEST_FILE = "/u/scr/xlisali/DART/dart/data/v1.1.1/dart-v1.1.1-full-dev.json"
+        TRAIN_FILE = "../data/dart/data/v1.1.1/dart-v1.1.1-full-train.json"
+        TEST_FILE = "../data/dart/data/v1.1.1/dart-v1.1.1-full-dev.json"
         folder_name = "triples_models/"
 
 
@@ -268,7 +268,7 @@ if __name__ == '__main__':
                      + 'w={}_'.format(args.weight_decay) + 's={}'.format(args.seed) + '_r={}'.format(args.init_random[:1]) +\
                      '_m={}'.format(args.mid_dim)
     else:
-        Model_FILE = dir_name
+        Model_FILE = args.dir_name
 
     if args.notes is not None:
         Model_FILE += '_{}'.format(args.notes)
